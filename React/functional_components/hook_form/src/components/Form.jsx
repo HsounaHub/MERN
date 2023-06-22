@@ -33,7 +33,7 @@ function Form() {
                 const validatepassword = (e) =>{
                     setPassword(e.target.value)
             
-                    if(e.target.value!= ConfirmPassword){
+                    if(e.target.value!== ConfirmPassword){
                         seterrorr({password:true});
                     }else{
                         seterrorr({password:false});
@@ -41,7 +41,7 @@ function Form() {
                     const validateConfirmPassword = (e) =>{
                         setConfirmPassword(e.target.value)
                 
-                        if(e.target.value!= password){
+                        if(e.target.value!== password){
                             seterrorr({ConfirmPassword:true});
                         }else{
                             seterrorr({ConfirmPassword:false});
