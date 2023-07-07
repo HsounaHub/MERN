@@ -29,7 +29,7 @@ function Form() {
        }
        return (
         <div>
-            <h2>Edit Show</h2>
+            <h2>Product Manager</h2>
             {/* update form */}
             <form onSubmit={handleForm}>
                 Title: <input onChange={(e)=>{setTitle(e.target.value)}} value={title}/> <br />
