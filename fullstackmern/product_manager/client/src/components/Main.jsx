@@ -15,16 +15,16 @@ const Main = (props) => {
         .catch((err)=>{
             console.log("❌❌❌ Something Went Wrong", err);
         })
-    },[])
+    },[props.update])
 
     // delete function
     const deleteShow = (id) =>{
         axios.delete("http://localhost:8000/api/Products/"+id)
         .then((res)=>{
             // TODO !!
-            // shows.filter((oneShow)=>{
-            //     return setShows((oneShow._id !== id))
-            // })
+            setShows(shows.filter((oneShow)=>{
+                return (oneShow._id !== id)
+            }))
         })
         .catch((err)=>{
             console.log("❌❌❌ Something Went Wrong", err)

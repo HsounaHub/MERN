@@ -2,8 +2,7 @@ import React from 'react'
 import {useState } from "react"
 import axios from "axios"
 
-
-function Form() {
+function Form(props) {
     const [title, setTitle] = useState("")
     const [Description, setDescription] = useState("")
     const [Price, setPrice] = useState(0)
@@ -16,12 +15,12 @@ function Form() {
             Price,
             Description,
         }
-        console.log(updatedShow);
         // send it to the server
         
         axios.post("http://localhost:8000/api/Products/", updatedShow)
         .then((response)=>{
             setTitle('');setPrice(0);setDescription('');
+            props.setupdate(updatedShow)
         })
         .catch((err)=>{
             console.log("❌❌❌ Something Went Wrong", err);
