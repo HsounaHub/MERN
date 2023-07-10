@@ -22,7 +22,8 @@ function Update_auther() {
                 seterror('')
             })
             .catch((err)=>{
-            seterror(err.response.data.error.message.slice(32))
+            seterror(err.response.data.error.message.slice(25))
+            console.log(err.response.data.error.message);
             })
             }
     return (

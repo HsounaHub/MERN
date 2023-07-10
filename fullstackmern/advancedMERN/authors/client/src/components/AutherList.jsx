@@ -5,7 +5,6 @@ import Delete_button from './Delete_button';
 
 function AutherList(props) {
     const [authers, setauthers] = useState([]);
-   
     useEffect(() => {
         axios.get('http://localhost:8000/api/authors')
             .then(res => setauthers(res.data));
@@ -14,10 +13,10 @@ function AutherList(props) {
     const removeFromDom = authorId => {
         setauthers(authers.filter(author => author._id != authorId))
     }
-  return (
+    return (
     <div>
         <Link to={"/new"}>add an auther </Link>
-         <h2>We have quotes by:</h2>
+        <h2>We have quotes by:</h2>
 
 
 <table className='table'>
